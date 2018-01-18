@@ -6,13 +6,11 @@
  */
 int main(void)
 {
-	int d0, d1, d2, a, b;
+	int d0, d1, d2;
 
 	d0 = '0';
 	d1 = '1';
 	d2 = '2';
-	a = 1;
-	b = 2;
 	while (d0 <= '9')
 	{
 		if (d0 < d1 && d1 < d2)
