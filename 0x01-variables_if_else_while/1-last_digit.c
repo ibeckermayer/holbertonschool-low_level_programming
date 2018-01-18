@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - prints whether last digit of random n is greater than 5, 0, or less 
+ * main - prints whether last digit of random n is greater than 5, 0, or less
  * than 6
  * Return: 0
  */
