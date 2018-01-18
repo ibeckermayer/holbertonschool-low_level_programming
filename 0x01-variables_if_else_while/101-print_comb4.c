@@ -13,7 +13,6 @@ int main(void)
 	d2 = '2';
 	a = 1;
 	b = 2;
-
 	while (d0 <= '9') /*&& d1 <= '9' && d2 <= '9')*/
 	{
 		if (d0 < d1 && d1 < d2)
@@ -21,7 +20,6 @@ int main(void)
 			putchar(d0);
 			putchar(d1);
 			putchar(d2);
-
 			if (!(d0 == '7' && d1 == '8' && d2 == '9'))
 			{
 				putchar(',');
@@ -38,14 +36,11 @@ int main(void)
 			}
 			else
 				d1++;
-
 			d2 = '0';
-
 		}
 		else
 			d2++;
 	}
 	putchar('\n');
-
 	return (0);
 }
