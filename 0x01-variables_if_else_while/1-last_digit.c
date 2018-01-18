@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
 
 /**
- * main - prints whether last digit of random n is greater than 5, 0, or less than 6
+ * main - prints whether last digit of random n is greater than 5, 0, or less 
+ * than 6
  * Return: 0
  */
 int main(void)
