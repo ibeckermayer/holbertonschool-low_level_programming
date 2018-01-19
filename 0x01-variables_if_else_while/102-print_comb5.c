@@ -6,46 +6,37 @@
  */
 int main(void)
 {
-	int d0, d1, d2, d3;
+	int n1, n2, n11, n12, n21, n22;
 
-	d0 = d1 = d2 = d3 = '0';
-	while (!(d0 == '9' && d1 == '9' && d2 == '9' && d3 == '9'))
+	n1 = 0;
+	n2 = 1;
+	while (n1 < 99)
 	{
-		if (d2 >= d0 && d3 > d1)
+		n11 = n1 / 10;
+		n12 = n1 % 10;
+		n21 = n2 / 10;
+		n22 = n2 % 10;
+
+		if (n2 > n1)
 		{
-			putchar(d0);
-			putchar(d1);
+			putchar(n11 + '0');
+			putchar(n12 + '0');
 			putchar(' ');
-			putchar(d2);
-			putchar(d3);
-			if (!(d0 == '9' && d1 == '8' && d2 == '9' && d3 == '9'))
+			putchar(n21 + '0');
+			putchar(n22 + '0');
+			if (!(n1 == 98 && n2 == 99))
 			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
-		if (d2 == '9' && d3 == '9')
+		n2++;
+		if (n2 == 100)
 		{
-			if (d1 == '9')
-			{
-				d1 = '0';
-				d0++;
-			}
-			else
-				d1++;
+			n2 = 0;
+			n1++;
 		}
-		if (d3 == '9')
-		{
-			d3 = '0';
-			if (d2 == '9')
-			{
-				d2 = '0';
-			}
-			else
-				d2++;
-		}
-		else
-			d3++;
+
 	}
 	putchar('\n');
 	return (0);
