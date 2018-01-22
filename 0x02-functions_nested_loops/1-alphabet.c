@@ -1,13 +1,12 @@
 #include "holberton.h"
 
 /**
- * main - prints Holberton, followed by a new line.
- *
- * Return: returns 0 for completion.
- */
+ * print_alphabet - prints the alphabet
+  */
 void print_alphabet(void)
 {
 	char c;
+
 	for (c = 'a'; c <= 'z'; c++)
 		_putchar(c);
 	_putchar('\n');
