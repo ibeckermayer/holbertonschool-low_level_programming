@@ -35,6 +35,7 @@ int _pow(int a, int b)
 }
 /**
  * print_number - prints a number using only _putchar
+ * @n: the number to be printed
  */
 void print_number(int n)
 {
