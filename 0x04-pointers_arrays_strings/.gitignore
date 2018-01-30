@@ -1,0 +1,7 @@
+*
+!*.c
+!holberton.h
+_putchar.c
+*main.c
+!README.md
+!.gitignore
