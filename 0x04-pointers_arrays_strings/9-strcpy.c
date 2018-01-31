@@ -16,7 +16,7 @@ int _strlen(char *s)
 }
 
 /**
- * puts_half - prints half of a string
+ * _strcpy - copies the string from src to dest
  * @dest: array where copy is stored
  * @src: string to be copied
  *
