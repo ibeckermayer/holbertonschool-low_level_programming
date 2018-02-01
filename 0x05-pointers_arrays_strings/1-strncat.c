@@ -28,15 +28,12 @@ int _strlen(char *s)
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int len_dest = _strlen(dest);
-	int len_src = n;
+	int dest_len = _strlen(dest);
 	int i;
 
-	dest += len_dest;
+	for (i = 0 ; i < n && src[i] != '\0' ; i++)
+		dest[dest_len + i] = src[i];
+	dest[dest_len + i] = '\0';
 
-	for (i = 0; i < n && *(src + i); i++)
-		*dest++ = *(src + i);
-	*(dest + 1) = '\0';
-	dest -= len_dest + len_src;
-	return (dest);
+	return dest;
 }
