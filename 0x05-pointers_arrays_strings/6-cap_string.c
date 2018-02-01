@@ -17,7 +17,7 @@ int _strlen(char *s)
 
 /**
  * is_sep - checks if character is separator
- * c - character being checked
+ * @c: character being checked
  *
  * Return: 0 for false, 1 for true
  */
@@ -25,21 +25,21 @@ int is_sep(char c)
 {
 	switch (c)
 	{
-	case ' ' :
-	case '\n' :
-	case '\t' :
-	case ',' :
-	case ';' :
-	case '.' :
-	case '!' :
-	case '?' :
-	case '"' :
-	case '(' :
-	case ')' :
-	case '{' :
-	case '}' :
+	case ' ':
+	case '\n':
+	case '\t':
+	case ',':
+	case ';':
+	case '.':
+	case '!':
+	case '?':
+	case '"':
+	case '(':
+	case ')':
+	case '{':
+	case '}':
 		return (1);
-	default :
+	default:
 		return (0);
 	}
 }
