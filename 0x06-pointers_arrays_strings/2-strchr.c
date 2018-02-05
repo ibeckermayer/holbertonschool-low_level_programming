@@ -11,10 +11,14 @@
  */
 char *_strchr(char *s, char c)
 {
+	char *ans = 0;
+
 	while (*s)
 		if (*s++ == c)
-			return (--s);
+		{
+			ans = --s;
+			break;
+		}
 
-	s = 0;
-	return (s);
+	return (ans);
 }
