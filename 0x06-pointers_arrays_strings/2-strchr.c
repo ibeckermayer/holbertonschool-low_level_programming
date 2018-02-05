@@ -1,5 +1,5 @@
 #include "holberton.h"
-#define NULL ((void*)0)
+#define NULL 0
 
 /**
  * _strchr - finds the first occurrence of the character c in the string s,
@@ -16,6 +16,5 @@ char *_strchr(char *s, char c)
 			return (--s);
 	if (c == '\0')
 		return (s);
-	s = 0;
-	return (s);
+	return (NULL);
 }
