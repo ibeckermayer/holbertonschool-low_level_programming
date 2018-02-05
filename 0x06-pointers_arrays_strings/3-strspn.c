@@ -17,8 +17,8 @@ int isin(char c, char *s)
 }
 
 /**
- * _strspn - find number of bytes in the initial segment of s which consist only
- * of bytes from accept
+ * _strspn - find number of bytes in the initial segment of s which consist
+ * only of bytes from accept
  * @s: string to be checked
  * @accept: string to be matched to
  *
@@ -27,10 +27,11 @@ int isin(char c, char *s)
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int ret = 0;
+
 	while (*s)
 		if (isin(*s++, accept))
 			ret++;
 		else
-			return ret;
-	return ret;
+			return (ret);
+	return (ret);
 }
