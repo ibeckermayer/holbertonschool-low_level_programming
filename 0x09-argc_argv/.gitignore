@@ -1,6 +1,7 @@
 *
+!*.c
 !holberton.h
+_putchar.c
+*main.c
 !README.md
 !.gitignore
-!libholberton.a
-!create_static_lib.sh
