@@ -3,3 +3,4 @@
 !README.md
 !.gitignore
 !libholberton.a
+!create_static_lib.sh
