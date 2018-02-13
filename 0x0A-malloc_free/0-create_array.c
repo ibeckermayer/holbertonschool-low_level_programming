@@ -10,14 +10,18 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	char *ret = (char *) malloc(size);
+	char *ret;
 	unsigned int i;
 
+	if (size == 0)
+		return (NULL);
+	ret = (char *) malloc(size);
+
 	if (ret == NULL)
-		return (0);
+		return (NULL);
 
 	for (i = 0; i < size; i++)
 		ret[i] = c;
 
-	return ret;
+	return (ret);
 }
