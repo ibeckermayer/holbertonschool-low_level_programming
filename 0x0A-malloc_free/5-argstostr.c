@@ -53,7 +53,6 @@ char *str_concat(char *s1, char *s2)
 		concat[i + offset] = s2[i];
 	concat[i++ + offset] = '\n';
 	concat[i + offset] = '\0';
-
 	return (concat);
 }
 
@@ -68,7 +67,8 @@ char *str_concat(char *s1, char *s2)
  */
 char *argstostr(int ac, char **av)
 {
-	char *ret_string = NULL;
+	char *prev_string = NULL;
+	char *new_string = NULL;
 	int i;
 
 	if (ac == 0 || av == NULL)
@@ -76,10 +76,12 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		ret_string = str_concat(ret_string, av[i]);
-		if (ret_string == NULL)
+		new_string = str_concat(prev_string, av[i]);
+		free(prev_string);
+		if (new_string == NULL)
 			return (NULL);
+		prev_string = new_string;
 	}
 
-	return (ret_string);
+	return (prev_string);
 }
