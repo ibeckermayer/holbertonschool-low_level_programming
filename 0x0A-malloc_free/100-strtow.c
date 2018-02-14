@@ -128,11 +128,18 @@ char **strtow(char *str)
 	if (word_lengths == NULL)
 		return (NULL);
 	start_indices = find_indices(str, num_words);
-	if (word_lengths == NULL)
+	if (start_indices == NULL)
+	{
+		free(word_lengths);
 		return (NULL);
+	}
 	mem = malloc(sizeof(char *) * (num_words + 1));
 	if (mem == NULL)
+	{
+		free(word_lengths);
+		free(start_indices);
 		return (NULL);
+	}
 	for (i = 0; i < num_words; i++)
 	{
 		mem[i] = malloc(sizeof(char) * (word_lengths[i] + 1));
@@ -141,6 +148,8 @@ char **strtow(char *str)
 			for (j = 0; j < i; j++) /* free prev allocated mem */
 				free(mem[i]);
 			free(mem);
+			free(word_lengths);
+			free(start_indices);
 			return (NULL);
 		}
 	}
