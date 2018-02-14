@@ -53,9 +53,9 @@ int *find_lengths(char *s, int num_words)
 	if (lengths == NULL)
 		return (NULL);
 
-        while (*s)
-        {
-                if (*s == ' ')
+	while (*s)
+	{
+		if (*s == ' ')
 		{
 			if (current_word_len != 0)
 			{
@@ -67,8 +67,10 @@ int *find_lengths(char *s, int num_words)
 			current_word_len++;
 		s++;
 	}
-        return (lengths);
 
+	if (index + 1 == num_words)
+		lengths[index] = current_word_len;
+	return (lengths);
 }
 
 /**
@@ -96,8 +98,7 @@ int *find_indices(char *s, int num_words)
 		last_char = s[i];
 	}
 
-        return (indices);
-
+	return (indices);
 }
 
 /**
@@ -116,39 +117,24 @@ char **strtow(char *str)
 
 	if (str == NULL) /* checks for edge cases */
 		return (NULL);
-
-	/* if string starts with spaces, move along until the first letter */
 	while (*str == ' ')
 		str++;
-
-	/* if it was just a string of spaces, or empty string return NULL */
 	if (!(*str))
 		return (NULL);
-
-	/* find the number of words */
 	num_words = countwords(str);
 	if (num_words == 0)
 		return (NULL);
-
-	/* create an array with the length of each word */
 	word_lengths = find_lengths(str, num_words);
 	if (word_lengths == NULL)
 		return (NULL);
-
-	/* create an array with the start index for each word */
 	start_indices = find_indices(str, num_words);
 	if (word_lengths == NULL)
 		return (NULL);
-
-	/* allocate an array with a place for each word */
 	mem = malloc(sizeof(char *) * (num_words + 1));
 	if (mem == NULL)
 		return (NULL);
-
-	/* allocate space for each character in each word */
 	for (i = 0; i < num_words; i++)
 	{
-		/* +1 in the next line is for null terminator */
 		mem[i] = malloc(sizeof(char) * (word_lengths[i] + 1));
 		if (mem[i] == NULL) /* if error */
 		{
@@ -158,17 +144,14 @@ char **strtow(char *str)
 			return (NULL);
 		}
 	}
-	mem[i] = NULL; 		/* last element is NULL as per instructions */
-
-	/* place each word in it's appropriate place */
+	mem[i] = NULL; /* last element is NULL as per instructions */
 	for (i = 0; i < num_words; i++) /* for each word */
 	{
 		for (j = 0; j < word_lengths[i]; j++)
 		{
 			mem[i][j] = str[start_indices[i] + j];
 		}
-			mem[i][j] = '\0';
+		mem[i][j] = '\0';
 	}
-
 	return (mem);
 }
