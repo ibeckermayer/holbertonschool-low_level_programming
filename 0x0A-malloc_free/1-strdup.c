@@ -33,10 +33,14 @@ char *_strdup(char *str)
 		return (NULL);
 
 	len = _strlen(str);
-	if ((copy = malloc(len + 1)) == NULL)
+	copy = malloc(len + 1);
+
+	if (copy == NULL)
 		return (NULL);
+
 	for (i = 0; i <= len; i++)
 		copy[i] = str[i];
+
 	return (copy);
 
 }
