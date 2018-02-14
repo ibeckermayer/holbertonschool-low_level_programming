@@ -75,11 +75,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
-	{
-		if (av[i] == NULL)
-			return (NULL);
 		ret_string = str_concat(ret_string, av[i]);
-	}
 
-	return ret_string;
+	return (ret_string);
 }
