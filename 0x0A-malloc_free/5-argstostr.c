@@ -81,6 +81,7 @@ char *argstostr(int ac, char **av)
 		if (new_string == NULL)
 			return (NULL);
 		prev_string = new_string;
+		free(new_string);
 	}
 
 	return (prev_string);
