@@ -1,20 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
 
-/**
- * _strlen - returns the length of a string
- * @s: string
- *
- * Return: length of string
- */
-int _strlen(char *s)
-{
-	int length = 0;
-
-	while (*s++)
-		length++;
-	return (length);
-}
 
 /**
  * countwords - counts the number of space seperated words in a string
@@ -162,5 +148,7 @@ char **strtow(char *str)
 		}
 		mem[i][j] = '\0';
 	}
+	free(word_lengths);
+	free(start_indices);
 	return (mem);
 }
