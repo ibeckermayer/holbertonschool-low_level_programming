@@ -2,7 +2,7 @@
 #define DOG_H
 int _putchar(char c);
 /**
- * dog - a dog
+ * struct dog - a dog
  * @name: name of the dog
  * @age: age of the dog
  * @owner: name of the owner
