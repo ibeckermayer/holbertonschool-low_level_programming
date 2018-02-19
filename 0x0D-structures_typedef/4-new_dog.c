@@ -62,26 +62,42 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int len_n = _strlen(name);
-	int len_o = _strlen(owner);
+	int len_n;
+	int len_o;
 	dog_t *d;
 	char *namec;
 	char *ownerc;
+
 
 	d = malloc(sizeof(dog_t));
 	if (d == NULL)
 		return (NULL);
 
-	namec = malloc(len_n + 1);
-	if (namec == NULL)
-		return (NULL);
+	if (name != NULL)
+	{
+		len_n = _strlen(name);
 
-	ownerc = malloc(len_o + 1);
-	if (ownerc == NULL)
-		return (NULL);
+		namec = malloc(len_n + 1);
+		if (namec == NULL)
+			return (NULL);
 
-	namec = _strcpy(namec, name);
-	ownerc = _strcpy(ownerc, owner);
+		namec = _strcpy(namec, name);
+	}
+	else
+		namec = NULL;
+
+	if (owner != NULL)
+	{
+		len_o = _strlen(owner);
+
+		ownerc = malloc(len_o + 1);
+		if (ownerc == NULL)
+			return (NULL);
+
+		ownerc = _strcpy(ownerc, owner);
+	}
+	else
+		ownerc = NULL;
 
 
 	init_dog(d, namec, age, ownerc);
