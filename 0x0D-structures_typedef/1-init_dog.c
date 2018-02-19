@@ -2,6 +2,10 @@
 
 /**
  * init_dog - initialize a dog structure
+ * @d: dog pointer
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: name of owner
  *
  * Return: void
  */
