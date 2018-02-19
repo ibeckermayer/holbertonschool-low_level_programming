@@ -79,13 +79,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 		namec = malloc(len_n + 1);
 		if (namec == NULL)
+		{
+			free(d);
 			return (NULL);
+		}
 
 		namec = _strcpy(namec, name);
 	}
 	else
-		/* namec = NULL; */
-		return (NULL);
+		namec = NULL;
 
 	if (owner != NULL)
 	{
@@ -93,13 +95,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 		ownerc = malloc(len_o + 1);
 		if (ownerc == NULL)
+		{
+			free(d);
 			return (NULL);
+		}
 
 		ownerc = _strcpy(ownerc, owner);
 	}
 	else
-		/* ownerc = NULL; */
-		return (NULL);
+		ownerc = NULL;
 
 
 	init_dog(d, namec, age, ownerc);
