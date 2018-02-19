@@ -2,8 +2,8 @@
 !*.c
 !*.h
 !holberton.h
-!2-main.c
 _putchar.c
 *main.c
+!2-main.c
 !README.md
 !.gitignore
