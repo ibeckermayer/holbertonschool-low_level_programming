@@ -3,13 +3,18 @@
 
 /**
  * free_dog - free a dog
- * @d
+ * @d: the dog
  *
  * Return: void
  */
 void free_dog(dog_t *d)
 {
-	free(d->name);
-	free(d->owner);
-	free(d);
+	if (dog != NULL)
+	{
+		if (d->name != NULL)
+			free(d->name);
+		if (d->owner != NULL)
+			free(d->owner);
+		free(d);
+	}
 }
