@@ -4,5 +4,6 @@
 !holberton.h
 _putchar.c
 *main.c
+!3-main.c
 !README.md
 !.gitignore
