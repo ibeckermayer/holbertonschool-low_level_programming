@@ -15,7 +15,7 @@ void print_all(const char * const format, ...)
 	i = 0;
 	valids = 0;
 	n = 0;
-	while (*(format + i))
+	while (format != NULL && *(format + i))
 	{
 		n++;
 		switch (*(format + i))
@@ -37,7 +37,7 @@ void print_all(const char * const format, ...)
 	i = 0;
 	valids_used = 0;
 	was_valid = 0;
-	while (i < n)
+	while (format != NULL && i < n)
 	{
 		switch (*(format + i))
 		{
