@@ -13,6 +13,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *curstr;
 
+	if (n == 0)
+		return;
+
 	va_start(valist, n);
 
 	if (separator != NULL)
