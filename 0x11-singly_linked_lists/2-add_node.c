@@ -18,7 +18,8 @@ int _strlen(const char *s)
 /**
  * add_node - adds a new node at the beginning of a list_t list.
  * str needs to be duplicated
- * @h: the list_t list
+ * @head: a double pointer to the old head
+ * @str: the string to be copied in
  *
  * Return: the address of the new element, or NULL if it failed
  */
@@ -46,12 +47,12 @@ list_t *add_node(list_t **head, const char *str)
 
 		(*head)->str = strdup(str);
 		if (!(*head)->str)
-			return NULL;
+			return (NULL);
 		(*head)->len = _strlen((*head)->str);
 		(*head)->next = copy;
 
-		return *head;
+		return (*head);
 
 	}
-	return NULL;
+	return (NULL);
 }
