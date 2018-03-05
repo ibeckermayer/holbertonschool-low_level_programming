@@ -23,10 +23,13 @@ listint_t *add_nodeint(listint_t **head, const int n)
 			copy->n = (*head)->n;
 			copy->next = (*head)->next;
 		}
-
+		free(*head);
 		*head = malloc(sizeof(**head));
 		if (!*head)
+		{
+			free(copy);
 			return (NULL);
+		}
 
 		(*head)->n = n;
 		(*head)->next = copy;
