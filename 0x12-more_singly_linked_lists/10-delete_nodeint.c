@@ -39,6 +39,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		node_tbd = *head;
 		*head = (*head)->next;
 		free(node_tbd);
+		return (SUCCESS);
 	}
 
 	/* get the node to be deleted, the node b4, and the node after */
