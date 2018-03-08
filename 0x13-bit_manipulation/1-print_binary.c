@@ -6,7 +6,7 @@
  *
  * Return: the msb
  */
-long unsigned int get_msb(unsigned long int n)
+unsigned long int get_msb(unsigned long int n)
 {
 	unsigned long int mask = 0;
 
