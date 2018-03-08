@@ -23,7 +23,7 @@ int count_1_bits(unsigned long int n)
 }
 
 /**
- * flip_bits - returns the number of bits you would need to flip to get from 
+ * flip_bits - returns the number of bits you would need to flip to get from
  * one number to another
  * @n: number 1
  * @m: number 2
