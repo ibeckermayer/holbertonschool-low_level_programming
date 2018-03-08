@@ -17,7 +17,6 @@ unsigned long int get_msb(unsigned long int n)
 	if (mask & n)
 		return (1);
 	return (0);
-
 }
 
 /**
