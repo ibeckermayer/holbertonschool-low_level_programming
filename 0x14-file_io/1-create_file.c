@@ -1,6 +1,38 @@
 #include "holberton.h"
 
 /**
+ * _strlen - returns the length of a string
+ * @s: string
+ *
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int length = 0;
+
+	while (*s++)
+		length++;
+	return (length);
+}
+
+/**
+ * _strcpy - copies the string from src to dest
+ * @dest: array where copy is stored
+ * @src: string to be copied
+ *
+ * Return: the pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int len = _strlen(src);
+
+	while (*src)
+		*dest++ = *src++;
+	*dest = '\0';
+	return (dest - len);
+}
+
+/**
  * create_file - create a file
  * @filename: name of file
  * @text_content: content of the file
@@ -10,6 +42,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd, ret;
+	char *buf;
 
 	if (!filename)
 		return (-1);
@@ -21,13 +54,16 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content)
 	{
-		ret = write(fd, text_content, BUFSIZ);
+		buf = malloc(BUFSIZ);
+		if (!buf)
+			return (-1);
+		buf = _strcpy(buf, text_content);
+		ret = write(fd, buf, BUFSIZ);
 		if (ret == -1)
 		{
 			close(fd);
 			return (ret);
 		}
-
 	}
 
 	close(fd);
