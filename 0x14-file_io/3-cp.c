@@ -7,7 +7,7 @@
  *
  * Return: 0 or error codes 97, 98, 99, or 100
  */
-nt main(int ac, char **av)
+int main(int ac, char **av)
 {
         int fd_to, fd_from, bytes_read, bytes_written;
         char *file_from = av[1];
