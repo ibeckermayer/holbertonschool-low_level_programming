@@ -56,16 +56,21 @@ int create_file(const char *filename, char *text_content)
 	{
 		buf = malloc(BUFSIZ);
 		if (!buf)
-			return (-1);
+    {
+            close (fd);
+            return (-1);
+    }
 		buf = _strcpy(buf, text_content);
 		ret = write(fd, buf, BUFSIZ);
 		if (ret == -1)
 		{
-			close(fd);
-			return (ret);
+            free(buf);
+            close(fd);
+            return (ret);
 		}
 	}
 
+  free(buf);
 	close(fd);
 	return (1);
 }
