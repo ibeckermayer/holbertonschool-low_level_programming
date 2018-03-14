@@ -1,52 +1,35 @@
 #include "holberton.h"
 
 /**
- * get_msb - gets the most significant bit of a number
- * @n: the number
+ * create_file - create a file
+ * @filename: name of file
+ * @text_content: content of the file
  *
- * Return: the msb
+ * Return: 1 on success, -1 on fail
  */
-unsigned long int get_msb(unsigned long int n)
+int create_file(const char *filename, char *text_content)
 {
-	unsigned long int mask = 0;
+	int fd, ret;
 
-	mask = ~mask;
-	mask >>= 1;
-	mask = ~mask;
+	if (!filename)
+		return (-1);
 
-	if (mask & n)
-		return (1);
-	return (0);
-}
+	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
 
-/**
- * print_binary - prints the binary representation of a number.
- * @n: the number
- *
- * Return: void
- */
-void print_binary(unsigned long int n)
-{
-	int hit_first_1 = 0;
-	int num_bits;
-	int i;
-	unsigned long int cur_bit;
+	if (fd == -1)
+		return (fd);
 
-	if (n == 0)
+	if (text_content)
 	{
-		_putchar('0');
-		return;
+		ret = write(fd, text_content, BUFSIZ);
+		if (ret == -1)
+		{
+			close(fd);
+			return (ret);
+		}
+
 	}
 
-	num_bits = sizeof(n) * 8;
-
-	for (i = 0; i < num_bits; i++)
-	{
-		cur_bit = get_msb(n);
-		if (cur_bit == 1)
-			hit_first_1 = 1;
-		if (hit_first_1)
-			_putchar(cur_bit + '0');
-		n <<= 1;
-	}
+	close(fd);
+	return (1);
 }
