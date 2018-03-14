@@ -32,12 +32,14 @@ int main(int ac, char **av)
 	res = write(fd_to, buf, res);
 	if (fd_to == -1 || res == -1)
 	{
+          close(fd_from);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 	res = close(fd_to);
 	if (res == -1)
 	{
+          close(fd_from);
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
