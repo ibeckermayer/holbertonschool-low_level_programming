@@ -1,13 +1,13 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - adds a new node at the beginning of a dlistint_t list.
+ * add_dnodeint2 - adds a new node at the beginning of a dlistint_t list.
  * @head: a double pointer to the old head
  * @n: the string to be copied in
  *
  * Return: the address of the new element, or NULL if it failed
  */
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+dlistint_t *add_dnodeint2(dlistint_t **head, const int n)
 {
 	if (head != NULL)
 	{
@@ -54,7 +54,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	if (!head)
 		return (NULL);
 	else if (!*head)
-		newnode = add_dnodeint(head, n);
+		newnode = add_dnodeint2(head, n);
 	else
 	{
 		temp = *head;
