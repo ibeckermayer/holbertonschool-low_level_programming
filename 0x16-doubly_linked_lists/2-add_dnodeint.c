@@ -22,6 +22,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 				return (NULL);
 			copy->n = (*head)->n;
 			copy->next = (*head)->next;
+			copy->prev = (*head)->prev;
 		}
 		free(*head);
 		*head = malloc(sizeof(**head));
