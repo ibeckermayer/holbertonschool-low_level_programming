@@ -37,27 +37,27 @@ dlistint_t *new_dnodeint(const int n)
 
 /**
  * insert_dnodeint_at_index - inserts a new node at a given position.
- * @head: a double pointer to the head
+ * @h: a double pointer to the head
  * @idx: the index of the list where the new node should be added
  * @n: the n for the new node
  *
  * Return: the address of the new node, or NULL if it failed
  */
-dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *node_before;
 	dlistint_t *new_node;
 	dlistint_t *node_after;
 
-	if (!head)
+	if (!h)
 		return (NULL);
-	if (!*head || idx == 0)
-		return (add_dnodeint(head, n));
+	if (!*h || idx == 0)
+		return (add_dnodeint(h, n));
 
-	node_before = get_dnodeint_at_index(*head, idx - 1);
+	node_before = get_dnodeint_at_index(*h, idx - 1);
 	if (!node_before)
 		return (NULL);
-	node_after = get_dnodeint_at_index(*head, idx);
+	node_after = get_dnodeint_at_index(*h, idx);
 	new_node = new_dnodeint(n);
 	if (new_node == NULL)
 		return (NULL);
