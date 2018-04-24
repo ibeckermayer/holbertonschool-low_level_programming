@@ -10,3 +10,4 @@ _putchar.c
 !README.md
 !.gitignore
 .#*
+!0x18-stacks_queues_lifo_fifo
