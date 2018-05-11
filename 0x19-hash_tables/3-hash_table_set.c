@@ -30,6 +30,7 @@ hash_node_t *make_hash_node(hash_table_t *ht, const char *key,
 		/* check for update */
 		if (strcmp(ht->array[index]->key, key) == 0)
 		{
+			free(ht->array[index]->value);
 			ht->array[index]->value = strdup(value);
 			return (ht->array[index]);
 		}
