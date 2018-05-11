@@ -26,7 +26,8 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
  *
  * Return: the hash node, or NULL for failure
  */
-hash_node_t *make_hash_node(hash_table_t *ht, const char *key, const char *value, unsigned long int index)
+hash_node_t *make_hash_node(hash_table_t *ht, const char *key,
+			    const char *value, unsigned long int index)
 {
 	hash_node_t *hn;
 
