@@ -20,8 +20,8 @@ hash_node_t *make_hash_node(hash_table_t *ht, const char *key,
 		hn = malloc(sizeof(*hn));
 		if (hn == NULL)
 			return (NULL);
-		hn->key = (char *)key;
-		hn->value = (char *)value;
+		hn->key = strdup(key);
+		hn->value = strdup(value);
 		hn->next = NULL;
 		return (hn);
 	}
@@ -30,7 +30,7 @@ hash_node_t *make_hash_node(hash_table_t *ht, const char *key,
 		/* check for update */
 		if (strcmp(ht->array[index]->key, key) == 0)
 		{
-			ht->array[index]->value = (char *)value;
+			ht->array[index]->value = strdup(value);
 			return (ht->array[index]);
 		}
 		else		/* collision */
@@ -38,8 +38,8 @@ hash_node_t *make_hash_node(hash_table_t *ht, const char *key,
 			hn = malloc(sizeof(*hn));
 			if (hn == NULL)
 				return (NULL);
-			hn->key = (char *)key;
-			hn->value = (char *)value;
+			hn->key = strdup(key);
+			hn->value = strdup(value);
 			hn->next = ht->array[index];
 			return (hn);
 		}
