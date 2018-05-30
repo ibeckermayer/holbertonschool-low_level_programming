@@ -1,5 +1,13 @@
 #include "sort.h"
-
+/**
+ * partition - find the partition for quicksort
+ * @array: the array to sort
+ * @lo: the lo
+ * @hi: the high
+ * @size: size of the array
+ *
+ * Return: index for the partition
+ */
 int partition(int *array, int lo, int hi, size_t size)
 {
 	int i, j, pivot, tmp;
@@ -31,7 +39,15 @@ int partition(int *array, int lo, int hi, size_t size)
 	return (i + 1);
 }
 
-
+/**
+ * quicksort - implementation of the quick sort algorithm
+ * @array: the array to sort
+ * @lo: the lo
+ * @hi: the high
+ * @size: size of the array
+ *
+ * Return: void
+ */
 void quicksort(int *array, int lo, int hi, size_t size)
 {
 	int p;
