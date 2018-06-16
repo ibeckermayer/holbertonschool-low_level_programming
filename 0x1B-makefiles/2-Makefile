@@ -6,8 +6,6 @@ NAME=holberton
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-holberton.o: holberton.c
-	$(CC)    -c -o holberton.o holberton.c
-
-main.o: main.c
-	$(CC)    -c -o main.o main.c
+$(OBJ): $(SRC)
+	$(CC) -c -o main.o main.c
+	$(CC) -c -o holberton.o holberton.c
