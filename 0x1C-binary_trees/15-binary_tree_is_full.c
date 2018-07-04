@@ -11,8 +11,10 @@ size_t binary_tree_one_child(const binary_tree_t *tree)
 	if (tree == NULL || (tree->right == NULL && tree->left == NULL))
 		return (0);
 	if (tree->right != NULL && tree->left != NULL)
-		return (binary_tree_one_child(tree->right) + binary_tree_one_child(tree->left));
-	return (1 + binary_tree_one_child(tree->right) + binary_tree_one_child(tree->left));
+		return (binary_tree_one_child(tree->right) +
+			binary_tree_one_child(tree->left));
+	return (1 + binary_tree_one_child(tree->right) +
+		binary_tree_one_child(tree->left));
 }
 
 /**
