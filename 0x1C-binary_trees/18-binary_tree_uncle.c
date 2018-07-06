@@ -8,7 +8,7 @@
  */
 binary_tree_t *binary_tree_sibling2(binary_tree_t *node)
 {
-	if (node == NULL)
+	if (node == NULL || node->parent == NULL)
 		return (NULL);
 	if (node->parent->left == node)
 		return (node->parent->right);
